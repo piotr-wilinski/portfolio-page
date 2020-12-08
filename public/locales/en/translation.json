@@ -1,0 +1,62 @@
+{
+  "homepage": {
+    "title": "Welcome to my world!",
+    "subtitle": "Let's start working together."
+  },
+  "header": {
+    "about": "About",
+    "projects": "Projects",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About",
+    "intro": "Hi, I'm Peter.",
+    "description1": "And I am a Front-end Developer from Poznan, who is currently looking for a job.",
+    "description2": "I have a huge passion for developing my skill and to use them in the interesting projects.",
+    "skills": "Skills",
+    "skillLvlOne": "Basic",
+    "skillLvlTwo": "Average",
+    "skillLvlThree": "Intermediate",
+    "skillLvlFour": "Advanced",
+    "skillLvlFive": "Master"
+  },
+  "projects": {
+    "title": "Projects",
+    "noProjects": "No projects",
+    "cta": "More",
+    "popup": {
+      "cta1": "Website",
+      "cta2": "Github"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "question": "What can I do for you?",
+    "offerHeadline1": "Designing and developing websites",
+    "offerDesc1": "Creating with the use of the latest technologies in mind. CMS-based, single-page web applications or even regular landing pages.",
+    "offerHeadline2": "Optimization",
+    "offerDesc2": "In terms of SEO, as well as checking and improving pages in terms of performance.",
+    "offerHeadline3": "Cooperation with front-end teams as a freelancer or regular employee",
+    "offerDesc3": "Work on small and large projects. Managing websites and Internet services. Customer contact and problem solving.",
+    "summary": "... and almost everything related to websites."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's be in touch",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "topic": "Topic",
+      "message": "Message",
+      "submit": "Submit",
+      "isRequired": {
+        "name": "Name is required",
+        "email": "Email is required",
+        "emailValid": "Enter a valid Email",
+        "topic": "Topic is required",
+        "message": "Message is required"
+      }
+    }
+  }
+}

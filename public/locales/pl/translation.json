@@ -1,0 +1,62 @@
+{
+  "homepage": {
+    "title": "Witaj w moim świecie!",
+    "subtitle": "Zacznijmy pracować razem."
+  },
+  "header": {
+    "about": "O mnie",
+    "projects": "Projekty",
+    "services": "Usługi",
+    "contact": "Kontakt"
+  },
+  "about": {
+    "title": "O mnie",
+    "intro": "Hej, jestem Piotrek.",
+    "description1": "I jestem Front-end Developerem mieszkającym w Poznaniu, który aktualnie poszukuje pracy.",
+    "description2": "Mam ogromną pasję do rozwijania swoich umiejętności i wykorzystywania ich do tworzenia ciekawych projektów.",
+    "skills": "Umiejętności",
+    "skillLvlOne": "Podstawowy",
+    "skillLvlTwo": "Średni",
+    "skillLvlThree": "Średniozaawansowany",
+    "skillLvlFour": "Zaawansowany",
+    "skillLvlFive": "Mistrzowski"
+  },
+  "projects": {
+    "title": "Projekty",
+    "noProjects": "Brak projektów",
+    "cta": "Więcej",
+    "popup": {
+      "cta1": "Zobacz stronę",
+      "cta2": "Zobacz github"
+    }
+  },
+  "services": {
+    "title": "Usługi",
+    "question": "Czym mogę się dla Ciebie zająć?",
+    "offerHeadline1": "Projektowanie i tworzenie stron internetowych",
+    "offerDesc1": "Tworzone z myślą o zastosowaniu najnowszych technologii. Oparte o CMS, jednostronnicowe aplikacje internetowe lub nawet zwykłe strony docelowe.",
+    "offerHeadline2": "Optymalizacja",
+    "offerDesc2": "Pod względem SEO jak i również sprawdzenie oraz poprawa stron pod względem wydajnościowym.",
+    "offerHeadline3": "Współpraca z zespołami front-endowymi jako freelancer",
+    "offerDesc3": "Praca przy małych i dużych projektach. Zarządzanie stronami i serwisami internetowymi. Kontakt z klientem i rozwiązywanie problemów.",
+    "summary": "... i w sumie niemal wszystkim, co jest związane ze stronami internetowymi."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Bądźmy w kontakcie",
+    "form": {
+      "name": "Imię",
+      "email": "Email",
+      "topic": "Temat",
+      "message": "Wiadomość",
+      "submit": "Wyślij",
+      "isRequired": {
+        "name": "Imię jest wymagane",
+        "email": "Email jest wymagany",
+        "emailValid": "Wprowadź poprawny adres mailowy",
+        "topic": "Temat jest wymagany",
+        "message": "Wiadomość jest wymagana"
+      }      
+    }
+  }
+}

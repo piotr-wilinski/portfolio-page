@@ -1,0 +1,13 @@
+type project { 
+  id: ID!, 
+  name: String!,
+  descriptionPL: String!,
+  descriptionEN: String!,
+  technologies: String!,
+  url: String!,
+  githubUrl: String!
+  }
+
+type Query {
+  project(id: ID!): project
+}

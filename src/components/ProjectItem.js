@@ -1,5 +1,8 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { useTranslation } from 'react-i18next'
+import i18next from 'i18next';
+import { Button } from './MultiUsedStyledComponents'
 
 const DivPopup = styled.div`
   position: fixed;
@@ -9,8 +12,9 @@ const DivPopup = styled.div`
   max-width: 750px;
   transform: translateX(-50%);
   border: 1px solid black;
-  background-color: #fff;
-  z-index: 6
+  background-color: ${({ theme }) => theme.body};
+  box-shadow: 0 25px 90px 10px rgba(0, 0, 0, .4);
+  z-index: 6;
 `
 
 const Close = styled.span`
@@ -71,53 +75,47 @@ const Paragraph = styled.p`
 
 const SpanContainer = styled.span`
   display: block;
-  color: #357DE6;
+  color: ${({ theme }) => theme.mainColorTheme};
   font-weight: bold;
   font-size: 0.8em;
 `
 
-const Button = styled.button`
-  display: inline-block;
-  border: 2px solid #2659A6;
-  background-color: #2659A6;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: 0.25s ease-in;
-
+const ButtonSecondary = styled(Button)`
+  background-color: ${({ theme }) => theme.body};
+  
   .children {
-    display: inline-block;
-    padding: 6px 20px;
-    color: #FFF;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.25s ease-in;
+    color: ${({ theme }) => theme.mainColorTheme};
   }
 
   &:hover {
-    background-color: #FFF;
+    background-color: ${({ theme }) => theme.mainColorTheme};
 
     .children {
-      color: #2659A6;
+      color: #FFF;
     }
   }
 `
 
 export const ProjectItem = props => {
+  const { t } = useTranslation()
+
   return (
     <>
       <DivPopup className="m-2">
         <Close onClick={props.close}><i className="fa fa-times"></i></Close>
         <Img src={props.img} alt={props.name} />
         <H3 className="m-4 pt-2 pb-3">{props.name}</H3>
-        <Paragraph className="mx-4 pb-3">{props.description}</Paragraph>
+        <Paragraph className="mx-4 pb-3">{i18next.language === 'pl' ? props.descriptionPL : props.descriptionEN}</Paragraph>
         <SpanContainer className="mx-4 mb-4">
           {props.techs.map(tech =>
             <span className="mr-2">{tech}</span>
           )}
         </SpanContainer>
-        <Button className="ml-4 mr-4 mb-3"><a target="_blank" rel="noreferrer" className="children" href={props.link}>Zobacz stronę</a></Button>
+        {props.link ?
+          <Button className="ml-4 mb-3"><a target="_blank" rel="noreferrer" className="children" href={props.link}><i className="fas fa-external-link-alt"></i> {t('projects.popup.cta1')}</a></Button>
+          : null}
         {props.github ?
-          <Button className="mr-4 mb-3"><a target="_blank" rel="noreferrer" className="children" href={props.github}>Zobacz github</a></Button>
+          <ButtonSecondary className="ml-4 mb-3"><a target="_blank" rel="noreferrer" className="children" href={props.github}><i className="fab fa-github"></i> {t('projects.popup.cta2')}</a></ButtonSecondary>
           : null
         }
       </DivPopup>

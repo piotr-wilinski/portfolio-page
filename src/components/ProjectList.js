@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ProjectItem } from './ProjectItem';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next'
 
 const Img = styled.img`
   width: 100%;
@@ -21,6 +22,7 @@ const HeaderText = styled.h4`
 `
 
 const Button = styled.button`
+  box-sizing: border-box;
   position: absolute;
   bottom: 33%;
   left: 50%;
@@ -28,22 +30,18 @@ const Button = styled.button`
   transform: translateX(150%);
   opacity: 0;
   text-transform: uppercase;
-  border: 1px solid #2659A6;
-  color: #2659A6;
+  border: 1px solid #3882F2;
+  color: #3882F2;
   border-radius: 4px;
   background-color: transparent;
   transition: all 0.3s ease-in, background-color 0.2s ease-in, color 0.2s ease-in;
-
-  .hovered {
-    background-color: #2659A6
-    color: #FFF;
-  }
 `
 
 const Card = styled.div`
-  width: 33%;
+  width: 33.33333333333%;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 15px 70px 0 rgba(0, 0, 0, .4);
 
   &:hover > ${Img} {
     opacity: 10%;
@@ -65,8 +63,10 @@ export const ProjectList = props => {
   const [key, setKey] = useState(null)
   const [hovered, setHovered] = useState(false)
 
+  const { t } = useTranslation()
+
   if (props.projects == null || props.projects.length === 0) {
-    return <h5 className="p-2">Brak projektów</h5>
+    return <h5 className="p-2">{t('projects.noProjects')}</h5>
   }
 
   const toggleShowProject = (id) => {
@@ -74,23 +74,26 @@ export const ProjectList = props => {
     setKey(id)
   }
 
-  return props.projects.map((p, index) =>
+  return props.projects.slice(0).reverse().map((p, index) =>
     <Card key={p.id} bgImage={p.imgSmall}>
       <Img src={p.imgSmall} alt={p.name} />
       <HeaderText>
         {p.name}
       </HeaderText>
-      <Button onMouseEnter={() => setHovered(true)} style={hovered ? { background: "#2659A6", color: "#FFF" } : {}} onMouseLeave={() => setHovered(false)}
+      <Button onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        style={hovered ? { background: "#3882F2", color: "#FFF" } : {}}
         onClick={() => toggleShowProject(index)}
       >
-        Więcej
-        </Button>
+        {t('projects.cta')}
+      </Button>
       {(showPop && key === index) ? <ProjectItem
         key={index}
         img={p.imgLarge}
         close={toggleShowProject}
         name={p.name}
-        description={p.description}
+        descriptionPL={p.descriptionPL}
+        descriptionEN={p.descriptionEN}
         techs={p.technologies}
         link={p.url}
         github={p.githubUrl}
