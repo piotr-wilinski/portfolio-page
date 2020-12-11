@@ -10,6 +10,8 @@ import * as yup from 'yup'
 import TextField from '@material-ui/core/TextField'
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core'
+import { device } from '../components/devices';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const theme = createMuiTheme({
   overrides: {
@@ -26,6 +28,13 @@ const theme = createMuiTheme({
 const useStyles = makeStyles({
   notFullWidth: {
     width: "48%",
+  },
+  fullWidth1: {
+    width: '100%',
+    marginBottom: '4%'
+  },
+  fullWidth2: {
+    width: '100%',
   },
   input: {
     color: "#CCC"
@@ -77,10 +86,14 @@ const FormGroup = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 4%;
+
+  @media ${device.tablet} {
+    flex-direction: column;
+  }
 `
 
 const Submit = styled(Button)`
-  margin: 0 auto;
+  margin: 0 auto 10%;
   padding: 0.8em 3em;
   background-color: #3882F2;
   border-color: #3882F2;
@@ -104,6 +117,8 @@ const Headline = styled.h4`
 export const Contact = props => {
   const { t } = useTranslation()
   const classes = useStyles()
+
+  const matches = useMediaQuery('(max-width: 768px)')
 
   const validationSchema = yup.object({
     name: yup
@@ -156,7 +171,7 @@ export const Contact = props => {
           <ThemeProvider theme={theme}>
             <FormGroup>
               <TextFieldWithStyles
-                className={classes.notFullWidth}
+                className={matches ? classes.fullWidth1 : classes.notFullWidth}
                 id="name"
                 name="name"
                 label={`${t('contact.form.name')}*`}
@@ -179,7 +194,7 @@ export const Contact = props => {
                 }}
               />
               <TextFieldWithStyles
-                className={classes.notFullWidth}
+                className={matches ? classes.fullWidth2 : classes.notFullWidth}
                 id="email"
                 name="email"
                 label={`${t('contact.form.email')}*`}
@@ -205,7 +220,7 @@ export const Contact = props => {
             <FormGroup>
               <TextFieldWithStyles
                 fullWidth
-                className={classes.input}
+                className={`${classes.input} children`}
                 id="topic"
                 name="topic"
                 label={`${t('contact.form.topic')}*`}

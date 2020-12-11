@@ -2,6 +2,7 @@ import React from 'react';
 import { Header } from '../components/Header';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next'
+import { device } from '../components/devices';
 
 const Banner = styled.div`
   position: absolute;
@@ -15,7 +16,8 @@ const Banner = styled.div`
   background-size: cover;
   z-index: -1;
   opacity: 0.7;
-  filter: blur(1px)
+  filter: blur(1px);
+  overflow: hidden;
 `
 
 const BlackBackground = styled.div`
@@ -34,6 +36,14 @@ const HeadlineContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   color: #DDD;
+
+  @media ${device.tablet} {
+    width: 80%;
+  }
+
+  @media ${device.mobile} {
+    width: 90%;
+  }
 `
 
 const Headline = styled.h2`

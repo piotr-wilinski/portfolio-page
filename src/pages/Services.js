@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
+import { device } from '../components/devices';
 import { Header } from '../components/Header';
 import { HeaderText } from '../components/MultiUsedStyledComponents'
 
@@ -22,6 +23,14 @@ const OfferContainer = styled.div`
   justify-content: center;
   width: 70%;
   margin: 70px auto;
+
+  @media ${device.smallScreen} {
+    width: 85%;
+  }
+
+  @media ${device.tablet} {
+    width: 95%;
+  }
 `
 
 const Offer = styled.div`
@@ -46,14 +55,7 @@ const Offer = styled.div`
     justify-content: center;
     width: 50%;
     text-align: center;
-
-    &:nth-child(2) {
-      color: ${({ theme }) => theme.secondaryColorTheme};
-    }
-
-    &:nth-child(1) {
-      color: ${({ theme }) => theme.mainColorTheme};
-    }
+    color: ${({ theme }) => theme.secondaryColorTheme};
 
     & h5 {
       margin: 0 1em 1.5em;
@@ -62,6 +64,33 @@ const Offer = styled.div`
 
     & p {
       margin: 0 1em;
+    }
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+
+    & div {
+      color: ${({ theme }) => theme.mainColorTheme};
+    }
+
+    @media ${device.tablet} {
+      flex-direction: column;
+    }
+  }
+
+  @media ${device.tablet} {
+    flex-direction: column;
+    margin: 20px auto;
+
+    & div, & img {
+      align-self: center;
+      width: 85%;
+
+      & h5 {
+        margin-top: 10px;
+        font-size: 1.5em;
+      }
     }
   }
 `
@@ -103,11 +132,11 @@ export const Services = props => {
             </div>
           </Offer>
           <Offer>
+            <img src="/images/seo.jpg" alt="Strony internetowe" />
             <div>
               <h5>{t('services.offerHeadline2')}</h5>
               <p>{t('services.offerDesc2')}</p>
             </div>
-            <img src="/images/seo.jpg" alt="Strony internetowe" />
           </Offer>
           <Offer>
             <img src="/images/work-from-home.jpeg" alt="Strony internetowe" />

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const HeaderText = styled.h2`
   padding-top: 1.5em;
@@ -47,4 +47,24 @@ export const Button = styled.button`
       color: ${({ theme }) => theme.mainColorTheme};
     }
   }
+`
+
+const backgroundColor = keyframes`
+  0% {
+    background-color: rgba(30, 30, 30, 0);
+  }
+  100% {
+    background-color: rgba(30, 30, 30, 0.2);
+  }
+`
+
+export const DivClickableBackground = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  animation: 0.3s ${backgroundColor} ease-out;
+  background-color: rgba(30, 30, 30, 0.2);
+  z-index: 5;  
 `

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ProjectItem } from './ProjectItem';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next'
+import { device } from './devices';
 
 const Img = styled.img`
   width: 100%;
@@ -56,6 +57,14 @@ const Card = styled.div`
     transform: translateX(-50%);
     opacity: 1;
   }
+
+  @media ${device.smallScreen} {
+    width: 50%;
+  }
+
+  @media ${device.tablet} {
+    width: 100%;
+  }
 `
 
 export const ProjectList = props => {
@@ -87,17 +96,20 @@ export const ProjectList = props => {
       >
         {t('projects.cta')}
       </Button>
-      {(showPop && key === index) ? <ProjectItem
-        key={index}
-        img={p.imgLarge}
-        close={toggleShowProject}
-        name={p.name}
-        descriptionPL={p.descriptionPL}
-        descriptionEN={p.descriptionEN}
-        techs={p.technologies}
-        link={p.url}
-        github={p.githubUrl}
-      /> : null}
+      {(showPop && key === index)
+        ? <ProjectItem
+          active={showPop}
+          key={index}
+          img={p.imgLarge}
+          close={toggleShowProject}
+          name={p.name}
+          descriptionPL={p.descriptionPL}
+          descriptionEN={p.descriptionEN}
+          techs={p.technologies}
+          link={p.url}
+          github={p.githubUrl}
+        />
+        : null}
     </Card>
   )
 }

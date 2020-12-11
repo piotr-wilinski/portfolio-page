@@ -4,22 +4,50 @@ import { Header } from '../components/Header';
 import { HeaderText } from '../components/MultiUsedStyledComponents'
 import { BarChart } from '../components/BarChart'
 import { useTranslation } from 'react-i18next'
+import { device } from '../components/devices';
 
 const AboutContainer = styled.div`
   display: flex;
   max-width: 1200px;
   margin: 100px auto;
   justify-content: center;
+
+  @media ${device.smallScreen} {
+    flex-direction: column;
+  }
 `
 
 const AboutMe = styled.div`
-  flex-basis: 40%;
+  width: 40%;
   display: flex;
   flex-direction: column;
+
+  @media ${device.smallScreen} {
+    width: 50%;
+    align-self: center;
+    margin-bottom: 25px;
+  }
+
+  @media ${device.tablet} {
+    width: 70%;
+  }
+
+  @media ${device.mobile} {
+    width: 95%;
+  }
 `
 
 const Skills = styled.div`
-  flex-basis: 60%;
+  width: 60%;
+
+  @media ${device.smallScreen} {
+    width: 80%;
+    align-self: center;
+  }
+
+  @media ${device.tablet} {
+    width: 99%;
+  }
 `
 
 const Img = styled.img`
@@ -48,6 +76,10 @@ const LinksContainer = styled.div`
 
   & a {
   color: ${({ theme }) => theme.text};
+  }
+
+  @media ${device.mobile} {
+    justify-content: space-between;
   }
 `
 
@@ -79,7 +111,7 @@ export const About = props => {
             <LinksContainer className="mx-5 px-4">
               <a href="https://www.linkedin.com/in/piotr-wili%C5%84ski-930374170/" _target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i></a>
               <a href="https://github.com/piotr-wilinski"><i className="fab fa-github-square"></i></a>
-              <a href="/"><i className="fas fa-file"></i></a>
+              <a href="/docs/piotr_wilinski_cv.pdf" _taget="_blank"><i className="fas fa-file"></i></a>
             </LinksContainer>
           </AboutMe>
           <Skills>

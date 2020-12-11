@@ -1,8 +1,9 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { useTranslation } from 'react-i18next'
 import i18next from 'i18next';
-import { Button } from './MultiUsedStyledComponents'
+import { Button, DivClickableBackground } from './MultiUsedStyledComponents'
+import { device } from './devices';
 
 const DivPopup = styled.div`
   position: fixed;
@@ -15,6 +16,14 @@ const DivPopup = styled.div`
   background-color: ${({ theme }) => theme.body};
   box-shadow: 0 25px 90px 10px rgba(0, 0, 0, .4);
   z-index: 6;
+
+  @media ${device.tablet} {
+    width: 99%;
+    top: 10px;
+    height: 200vh;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
 `
 
 const Close = styled.span`
@@ -36,26 +45,6 @@ const Close = styled.span`
   &:hover {
     color: #E6E6E6;
   }
-`
-
-const backgroundColor = keyframes`
-  0% {
-    background-color: rgba(30, 30, 30, 0);
-  }
-  100% {
-    background-color: rgba(30, 30, 30, 0.2);
-  }
-`
-
-const DivClickableBackground = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  animation: 0.3s ${backgroundColor} ease-out;
-  background-color: rgba(30, 30, 30, 0.2);
-  z-index: 5;  
 `
 
 const Img = styled.img`
@@ -101,7 +90,7 @@ export const ProjectItem = props => {
 
   return (
     <>
-      <DivPopup className="m-2">
+      <DivPopup>
         <Close onClick={props.close}><i className="fa fa-times"></i></Close>
         <Img src={props.img} alt={props.name} />
         <H3 className="m-4 pt-2 pb-3">{props.name}</H3>
