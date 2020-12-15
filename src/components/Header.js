@@ -129,19 +129,6 @@ const ThemeChanger = styled.span`
   text-align: center;
   justify-content: center;
   margin: 0 15px 0 30px;
-
-  .fa {
-    cursor: pointer;
-    color: #EEE;
-    transition: 0.3s ease-in;
-
-    &.active {
-      color: #3882F2;
-    }
-
-    &:hover {
-      color: #3882F2;
-    }
   }
 
   @media ${device.smallScreen} {
@@ -206,7 +193,8 @@ export const Header = (props) => {
             <StyledNavLink to='/contact'>{t('header.contact')}</StyledNavLink>
             <ThemeChanger>
               <i onClick={props.themeToggle}
-                className={props.theme === "light" ? "fa fa-adjust" : "fa fa-adjust active"}>
+                className={props.theme === "light" ? "icon-adjust" : "icon-adjust active"}
+                aria-hidden="true">
               </i></ThemeChanger>
             <LanguageChanger>
               <button className={i18next.language === 'pl' ? 'active' : ''} onClick={() => i18n.changeLanguage('pl')}>pl</button>

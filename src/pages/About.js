@@ -90,6 +90,12 @@ const SkillsTitle = styled.h2`
   font-weight: 700;
 `
 
+const Link = styled.a`
+  &:hover {
+    text-decoration: none;
+  }
+`
+
 export const About = props => {
   const { t } = useTranslation()
 
@@ -109,9 +115,9 @@ export const About = props => {
               </Desc>
             </div>
             <LinksContainer className="mx-5 px-4">
-              <a href="https://www.linkedin.com/in/piotr-wili%C5%84ski-930374170/" _target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i></a>
-              <a href="https://github.com/piotr-wilinski"><i className="fab fa-github-square"></i></a>
-              <a href="/docs/piotr_wilinski_cv.pdf" _taget="_blank"><i className="fas fa-file"></i></a>
+              <Link href="https://www.linkedin.com/in/piotr-wili%C5%84ski-930374170/" _target="_blank" rel="noreferrer"><i className="icon-linkedin-square"></i></Link>
+              <Link href="https://github.com/piotr-wilinski"><i className="icon-github-square"></i></Link>
+              <Link href="/docs/piotr_wilinski_cv.pdf" _taget="_blank"><i className="icon-file"></i></Link>
             </LinksContainer>
           </AboutMe>
           <Skills>

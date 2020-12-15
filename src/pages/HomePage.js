@@ -18,6 +18,10 @@ const Banner = styled.div`
   opacity: 0.7;
   filter: blur(1px);
   overflow: hidden;
+
+  @media ${device.tablet} {
+    background-image: url("/images/webdesignsmall.jpg");
+  }
 `
 
 const BlackBackground = styled.div`

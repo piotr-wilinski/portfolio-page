@@ -1,5 +1,4 @@
 import React, { Suspense, useState } from 'react';
-import './App.css';
 import { PortfolioPageDataStore } from './data/DataStore'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'

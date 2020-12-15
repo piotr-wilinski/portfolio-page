@@ -39,10 +39,10 @@ createServer()
 
 //mail
 const transport = {
-  host: creds.HOST,
+  host: 'SMTP.office365.com',
   port: 587,
   auth: {
-    user: creds.USER, // 
+    user: creds.USER,
     pass: creds.PASS
   }
 }

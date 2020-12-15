@@ -5,12 +5,13 @@
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
+  <meta name="theme-color" content="#2659A6" />
+  <meta name="description" content="Piotr Wiliński devIt, Front-end Developer na Twoje zlecenie." />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- <link href="/fonts/abeezee.css" rel="stylesheet"> -->
+  <link href="/fonts/open-sans.css" rel="stylesheet">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
   <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -25,8 +26,109 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  <title>React App</title>
+  <title>Piotr Wiliński devIT</title>
   <base href="/">
+
+  <style>
+    @font-face {
+      font-family: "ABeeZee";
+      src: url('fonts/ABeeZee-Regular.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: "Open Sans";
+      src: url('fonts/OpenSans-Light.ttf') format('truetype');
+      font-weight: 300;
+    }
+
+    @font-face {
+      font-family: "Open Sans";
+      src: url('fonts/OpenSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+
+    @font-face {
+      font-family: "Open Sans";
+      src: url('fonts/OpenSans-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+    }
+
+    @font-face {
+      font-family: "Open Sans";
+      src: url('fonts/OpenSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+
+    @font-face {
+      font-family: "Open Sans";
+      src: url('fonts/OpenSans-ExtraBold.ttf') format('truetype');
+      font-weight: 800;
+    }
+
+    @font-face {
+      font-family: 'icomoon';
+      src: url('fonts/icomoon.eot?eddmth');
+      src: url('fonts/icomoon.eot?eddmth#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?eddmth') format('truetype'),
+        url('fonts/icomoon.woff?eddmth') format('woff'),
+        url('fonts/icomoon.svg?eddmth#icomoon') format('svg');
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
+    }
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      /* use !important to prevent issues with browser extensions that change fonts */
+      font-family: 'icomoon' !important;
+      speak: never;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      cursor: pointer;
+      transition: 0.2s ease-in;
+      text-decoration: none;
+
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    [class^="icon-"].active,
+    [class*=" icon-"].active {
+      color: #3882F2;
+    }
+
+    [class^="icon-"]:hover,
+    [class*=" icon-"]:hover {
+      text-decoration: none;
+    }
+
+    .icon-adjust:before {
+      content: "\e900";
+    }
+
+    .icon-adjust:before:hover {
+      color: #3882F2;
+    }
+
+    .icon-linkedin-square:before {
+      content: "\e901";
+    }
+
+    .icon-file:before {
+      content: "\e902";
+    }
+
+    .icon-github-square:before {
+      content: "\e903";
+    }
+
+    .icon-external-link:before {
+      content: "\e904";
+    }
+  </style>
 </head>
 
 <body>

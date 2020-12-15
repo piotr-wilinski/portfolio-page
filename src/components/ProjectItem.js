@@ -101,10 +101,10 @@ export const ProjectItem = props => {
           )}
         </SpanContainer>
         {props.link ?
-          <Button className="ml-4 mb-3"><a target="_blank" rel="noreferrer" className="children" href={props.link}><i className="fas fa-external-link-alt"></i> {t('projects.popup.cta1')}</a></Button>
+          <Button className="ml-4 mb-3"><a target="_blank" rel="noreferrer" className="children" href={props.link}><i className="icon-external-link"></i> {t('projects.popup.cta1')}</a></Button>
           : null}
         {props.github ?
-          <ButtonSecondary className="ml-4 mb-3"><a target="_blank" rel="noreferrer" className="children" href={props.github}><i className="fab fa-github"></i> {t('projects.popup.cta2')}</a></ButtonSecondary>
+          <ButtonSecondary className="ml-4 mb-3"><a target="_blank" rel="noreferrer" className="children" href={props.github}><i className="icon-github-square"></i> {t('projects.popup.cta2')}</a></ButtonSecondary>
           : null
         }
       </DivPopup>
